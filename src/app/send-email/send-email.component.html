@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto mt-5 p-3 bg-light border border-info">
+            <form [formGroup]="infoForm" (ngSubmit)="sendMail()" #form="ngForm">
+                <label for="subjectInp">Subject</label>
+                <input type="text" id="subject" class="form-control border-info" formControlName="subject">
+
+                <label for="mailInp">Email</label>
+                <input type="text" id="mail" class="form-control border-info" formControlName="email">
+
+                <label for="messageInp">Message</label>
+                <input type="text" id="text" class="form-control border-info" formControlName="text">
+
+
+                <div class="text-right mt-3">
+                    <button class="btn btn-info">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
