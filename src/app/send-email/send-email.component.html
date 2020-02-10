@@ -3,17 +3,17 @@
         <div class="col-6 mx-auto mt-5 p-3 bg-light border border-info">
             <form [formGroup]="infoForm" (ngSubmit)="sendMail()" #form="ngForm">
                 <label for="subjectInp">Subject</label>
-                <input type="text" id="subject" class="form-control border-info" formControlName="subject">
+                <input type="text" id="subject" class="form-control border-info" formControlName="subject" #subject>
 
                 <label for="mailInp">Email</label>
-                <input type="text" id="mail" class="form-control border-info" formControlName="email">
+                <input type="text" id="mail" class="form-control border-info" formControlName="email" #email>
 
                 <label for="messageInp">Message</label>
-                <input type="text" id="text" class="form-control border-info" formControlName="text">
+                <input type="text" id="text" class="form-control border-info" formControlName="text" #text>
 
 
                 <div class="text-right mt-3">
-                    <button class="btn btn-info">Send</button>
+                    <button name="submit" type="submit" class="btn btn-info" (click)="sendMail(subject.value, email.value, text.value)">Send</button>
                 </div>
             </form>
         </div>

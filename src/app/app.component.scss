@@ -1,7 +1,11 @@
 nav {
     display: grid;
     grid-auto-flow: column;
-    width: 400px;
     font-weight: bold;
-    color: red;
+    color: white;
+    padding: 20px;
+    background-color: black;
+}
+p:first-child {
+    margin-left: 70px;
 }

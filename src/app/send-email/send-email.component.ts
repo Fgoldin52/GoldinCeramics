@@ -8,7 +8,7 @@ import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@ang
     templateUrl: './send-email.component.html',
     styleUrls: ['./send-email.component.scss']
 })
-export class SendEmailComponent implements OnInit, OnDestroy {
+export class SendEmailComponent {
     public subscription: Subscription;
     constructor(private sendmailservice: SendMailServiceService,
         // tslint:disable-next-line:align
@@ -37,7 +37,7 @@ export class SendEmailComponent implements OnInit, OnDestroy {
     // get text() { return this.infoForm.get('text'); }
 
 
-    sendMail() {
+    /* sendMail() {
         console.log(this.infoForm.value);
         this.subscription = this.sendmailservice.sendEmail(this.infoForm.value).
             subscribe(data => {
@@ -49,11 +49,13 @@ export class SendEmailComponent implements OnInit, OnDestroy {
                 // tslint:disable-next-line:quotemark
                 console.error(error, "error");
             });
-    }
+    } */
 
-    ngOnInit() {
+    sendMail(subject, email, text) {
+        this.sendmailservice.sendEmail(subject, email, text).subscribe(success => {
+            console.log('Success!');
+        }, error => {
+            console.log('Error!');
+        });
     }
-    ngOnDestroy() {
-    }
-
 }
