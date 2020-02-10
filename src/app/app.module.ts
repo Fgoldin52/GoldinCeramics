@@ -29,6 +29,7 @@ import {
 } from '@angular/material';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
+import { SendEmailComponent } from './send-email/send-email.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EditUserResolver } from './form/edit-work/edit-work.resolver';
     CreateWorkComponent,
     WorkListComponent,
     EditWorkComponent,
-    WorkDetailComponent
+    WorkDetailComponent,
+    SendEmailComponent
   ],
   imports: [
     BrowserModule,
