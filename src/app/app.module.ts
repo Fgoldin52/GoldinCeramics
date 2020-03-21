@@ -30,6 +30,8 @@ import {
 import { AngularFirestore } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
 import { SendEmailComponent } from './send-email/send-email.component';
+import { PracticeComponent } from './practice/practice.component';
+import { VasesListComponent } from './form/vases-list/vases-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SendEmailComponent } from './send-email/send-email.component';
     WorkListComponent,
     EditWorkComponent,
     WorkDetailComponent,
-    SendEmailComponent
+    SendEmailComponent,
+    PracticeComponent,
+    VasesListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<h3>{{name}}</h3>
+
+<button (click)="showShortName = !showShortName">Short Name</button>
+<button (click)="showLongName = !showLongName">Long Name</button>
+
+<div *ngIf="showShortName">{{shortNameFilter}}</div>
+<div *ngIf="showLongName">{{longNameFilter}}</div>

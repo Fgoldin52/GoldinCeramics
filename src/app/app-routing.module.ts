@@ -6,6 +6,8 @@ import { EditWorkComponent } from './form/edit-work/edit-work.component';
 import { WorkDetailComponent } from './form/work-detail/work-detail.component';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
 import { SendEmailComponent } from './send-email/send-email.component';
+import { PracticeComponent } from './practice/practice.component';
+import { VasesListComponent } from './form/vases-list/vases-list.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'send-email',
     component: SendEmailComponent
+  },
+  {
+    path: 'practice',
+    component: PracticeComponent
+  },
+  {
+    path: 'form/vases-list',
+    component: VasesListComponent
   }
 ];
 

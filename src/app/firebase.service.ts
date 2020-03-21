@@ -13,6 +13,10 @@ export class FirebaseService {
     return this.db.collection('works').doc(userKey).snapshotChanges();
   }
 
+  filterVases() {
+    return this.db.collection('works', ref => ref.where('title', '==', 'test')).snapshotChanges();
+  }
+
   updateUser(userKey, value) {
     value.nameToSearch = value.name.toLowerCase();
     return this.db.collection('works').doc(userKey).set(value);

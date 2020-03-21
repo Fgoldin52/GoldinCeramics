@@ -3,11 +3,11 @@ import { FirebaseService } from './../../firebase.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-work-list',
-  templateUrl: './work-list.component.html',
-  styleUrls: ['./work-list.component.scss']
+  selector: 'app-vases-list',
+  templateUrl: './vases-list.component.html',
+  styleUrls: ['./vases-list.component.scss']
 })
-export class WorkListComponent implements OnInit {
+export class VasesListComponent implements OnInit {
 
   items: Array<any>;
 
@@ -17,14 +17,7 @@ export class WorkListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getData();
-  }
-
-  getData() {
-    this.firebaseService.getUsers()
-      .subscribe(result => {
-        this.items = result;
-      });
+    this.filterVase();
   }
 
   filterVase() {
