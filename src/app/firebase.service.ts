@@ -14,7 +14,11 @@ export class FirebaseService {
   }
 
   filterVases() {
-    return this.db.collection('works', ref => ref.where('title', '==', 'test')).snapshotChanges();
+    return this.db.collection('works', ref => ref.where('type', '==', 'Vase')).snapshotChanges();
+  }
+
+  filterDreidels() {
+    return this.db.collection('works', ref => ref.where('type', '==', 'Dreidel')).snapshotChanges();
   }
 
   updateUser(userKey, value) {
@@ -34,7 +38,8 @@ export class FirebaseService {
     return this.db.collection('works').add({
       title: value.title,
       description: value.description,
-      price: value.price
+      price: value.price,
+      type: value.type
     });
   }
 

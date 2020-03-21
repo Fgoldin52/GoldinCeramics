@@ -18,9 +18,20 @@
         </mat-form-field>
     </div>
 
-    <div class="row submit-button-container">
-        <div class="col-md-4">
-            <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Create</button>
+    <div class="form-group">
+        <mat-form-field class="input-style">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+                <mat-option *ngFor="let type of types" [value]="type.value">
+                    {{type.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class=" row submit-button-container ">
+        <div class="col-md-4 ">
+            <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid ">Create</button>
         </div>
     </div>
 

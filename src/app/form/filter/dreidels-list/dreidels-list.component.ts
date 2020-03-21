@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from './../../firebase.service';
+import { FirebaseService } from './../../../firebase.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-vases-list',
-  templateUrl: './vases-list.component.html',
-  styleUrls: ['./vases-list.component.scss']
+  selector: 'app-dreidels-list',
+  templateUrl: './dreidels-list.component.html',
+  styleUrls: ['./dreidels-list.component.scss']
 })
-export class VasesListComponent implements OnInit {
+export class DreidelsListComponent implements OnInit {
 
   items: Array<any>;
 
@@ -17,11 +17,11 @@ export class VasesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.filterVase();
+    this.filterDreidel();
   }
 
-  filterVase() {
-    this.firebaseService.filterVases()
+  filterDreidel() {
+    this.firebaseService.filterDreidels()
       .subscribe(result => {
         this.items = result;
       });

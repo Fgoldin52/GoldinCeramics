@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
 
+interface Type {
+  value: string;
+}
+
 @Component({
   selector: 'app-create-work',
   templateUrl: './create-work.component.html',
@@ -11,6 +15,18 @@ import { FirebaseService } from '../../firebase.service';
 export class CreateWorkComponent implements OnInit {
 
   exampleForm: FormGroup;
+
+  types: Type[] = [
+    { value: 'Vase' },
+    { value: 'Mirror' },
+    { value: 'Decorative Plate' },
+    { value: 'Candle Stick' },
+    { value: 'Mezuzah' },
+    { value: 'Dreidel' },
+    { value: 'Menorah' },
+    { value: 'Jewelry Box' },
+    { value: 'Cup' }
+  ];
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +41,8 @@ export class CreateWorkComponent implements OnInit {
     this.exampleForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      price: ['', Validators.required]
+      price: ['', Validators.required],
+      type: ['']
     });
   }
 
@@ -34,6 +51,7 @@ export class CreateWorkComponent implements OnInit {
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       price: new FormControl('', Validators.required),
+      type: new FormControl('')
     });
   }
   onSubmit(value) {

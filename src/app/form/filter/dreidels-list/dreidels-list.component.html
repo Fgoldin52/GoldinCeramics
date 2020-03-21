@@ -1,5 +1,12 @@
-<p mat-menu-item routerLink="../work-list" routerLinkActive="active-link">
+<p mat-menu-item routerLink="../../work-list" routerLinkActive="active-link">
     <span>Main Menu</span>
+</p>
+
+<p mat-menu-item routerLink="./../vases-list" routerLinkActive="active-link">
+    <span>Vases</span>
+</p>
+<p mat-menu-item routerLink="./../dreidels-list" routerLinkActive="active-link">
+    <span>Dreidels</span>
 </p>
 
 <div class="list-group users-list">
@@ -8,6 +15,7 @@
             <h5 class="mb-1">{{item.payload.doc.data().title}}</h5>
             <h5 class="mb-1">{{item.payload.doc.data().description}}</h5>
             <h5 class="mb-1">{{item.payload.doc.data().price}}</h5>
+            <h5 class="mb-1">{{item.payload.doc.data().type}}</h5>
             <button (click)="viewDetails(item)">Modify</button>
         </div>
     </div>

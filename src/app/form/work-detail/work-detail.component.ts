@@ -4,6 +4,10 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { FirebaseService } from './../../firebase.service';
 import { Router } from '@angular/router';
 
+interface Type {
+  value: string;
+}
+
 @Component({
   selector: 'app-work-detail',
   templateUrl: './work-detail.component.html',
@@ -12,6 +16,15 @@ import { Router } from '@angular/router';
 export class WorkDetailComponent implements OnInit {
   exampleForm: FormGroup;
   item: any;
+
+  types: Type[] = [
+    { value: 'Vase' },
+    { value: 'Mirror' },
+    { value: 'Decorative Plate' },
+    { value: 'Candle Stick' },
+    { value: 'Mezuzah' },
+    { value: 'Dreidel' },
+  ];
 
   constructor(
     public firebaseService: FirebaseService,
@@ -36,7 +49,8 @@ export class WorkDetailComponent implements OnInit {
     this.exampleForm = this.fb.group({
       title: [this.item.title, Validators.required],
       description: [this.item.description, Validators.required],
-      price: [this.item.price, Validators.required]
+      price: [this.item.price, Validators.required],
+      type: [this.item.type, Validators.required]
     });
   }
 
