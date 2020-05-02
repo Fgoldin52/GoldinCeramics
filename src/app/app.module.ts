@@ -34,6 +34,7 @@ import { SendEmailComponent } from './send-email/send-email.component';
 import { PracticeComponent } from './practice/practice.component';
 import { VasesListComponent } from './form/filter/vases-list/vases-list.component';
 import { DreidelsListComponent } from './form/filter/dreidels-list/dreidels-list.component';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { DreidelsListComponent } from './form/filter/dreidels-list/dreidels-list
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [AngularFirestore, EditUserResolver],
+  providers: [AngularFirestore, EditUserResolver, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

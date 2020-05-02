@@ -29,6 +29,11 @@
         </mat-form-field>
     </div>
 
+    <label for="file">File:</label>
+    <div class="form-group col-12">
+        <input type="file" id="file" #userPhoto (change)="onFileSelected($event)" name="image" autocomplete="off" />
+    </div>
+
     <div class=" row submit-button-container ">
         <div class="col-md-4 ">
             <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid ">Create</button>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
+import { Observable } from 'rxjs';
+import { finalize, tap } from 'rxjs/operators';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 interface Type {
   value: string;
@@ -28,9 +32,16 @@ export class CreateWorkComponent implements OnInit {
     { value: 'Cup' }
   ];
 
+  title = 'cloudsSorage';
+  selectedFile: File = null;
+  ab;
+  downloadURL: Observable<string>;
+
   constructor(
     private fb: FormBuilder,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    private storage: AngularFireStorage,
+    private db: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -42,7 +53,8 @@ export class CreateWorkComponent implements OnInit {
       title: ['', Validators.required],
       description: ['', Validators.required],
       price: ['', Validators.required],
-      type: ['']
+      type: [''],
+      url: ['']
     });
   }
 
@@ -55,13 +67,43 @@ export class CreateWorkComponent implements OnInit {
     });
   }
   onSubmit(value) {
-    this.firebaseService.createUser(value)
+    this.createWork(value)
       .then(
         res => {
           this.resetFields();
           alert('The work has been successfully submitted');
         }
       );
+  }
+  onFileSelected(event) {
+    const n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(async () => {
+          this.downloadURL = await fileRef.getDownloadURL().toPromise();
+          this.db.collection('images').add({ downloadURL: this.downloadURL });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      });
+  }
+
+  createWork(value) {
+    return this.db.collection('works').add({
+      title: value.title,
+      description: value.description,
+      price: value.price,
+      type: value.type,
+      downloadURL: this.downloadURL
+    });
   }
 
 

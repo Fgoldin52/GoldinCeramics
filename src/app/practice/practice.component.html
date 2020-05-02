@@ -1,7 +1,4 @@
-<h3>{{name}}</h3>
-
-<button (click)="showShortName = !showShortName">Short Name</button>
-<button (click)="showLongName = !showLongName">Long Name</button>
-
-<div *ngIf="showShortName">{{shortNameFilter}}</div>
-<div *ngIf="showLongName">{{longNameFilter}}</div>
+<label for="file">File:</label>
+<div class="form-group col-12">
+    <input type="file" id="file" #userPhoto (change)="onFileSelected($event)" name="image" autocomplete="off" />
+</div>

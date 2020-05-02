@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { finalize, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-practice',
@@ -7,33 +11,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeComponent implements OnInit {
 
-  name: string[] = [
-    'Feliks',
-    'Ruby',
-    'Vitaliy',
-    'Olga',
-    'Efim'
-  ];
+  constructor(private storage: AngularFireStorage) { }
 
-  shortNameFilter = this.name.filter(this.shortName);
-  longNameFilter = this.name.filter(this.longName);
-
-  // tslint:disable-next-line:no-inferrable-types
-  showShortName: boolean = false;
-  // tslint:disable-next-line:no-inferrable-types
-  showLongName: boolean = false;
-
-  constructor() { }
+  title = 'cloudsSorage';
+  selectedFile: File = null;
+  fb;
+  downloadURL: Observable<string>;
 
   ngOnInit() {
   }
 
-  shortName(element) {
-    return (element.length < 5);
-  }
-
-  longName(a) {
-    return (a.length > 5);
+  onFileSelected(event) {
+    const n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.fb = url;
+            }
+            console.log(this.fb);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      });
   }
 
 }
