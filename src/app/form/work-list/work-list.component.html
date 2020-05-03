@@ -1,23 +1,14 @@
-<p mat-menu-item routerLink="./../work-list" routerLinkActive="active-link">
-    <span>Main Menu</span>
-</p>
-
-<p mat-menu-item routerLink="./../filter/vases-list" routerLinkActive="active-link">
-    <span>Vases</span>
-</p>
-<p mat-menu-item routerLink="./../filter/dreidels-list" routerLinkActive="active-link">
-    <span>Dreidels</span>
-</p>
-
-<div class="list-group users-list">
-    <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div>
-            <h5 class="mb-1">{{item.payload.doc.data().title}}</h5>
-            <h5 class="mb-1">{{item.payload.doc.data().description}}</h5>
-            <h5 class="mb-1">{{item.payload.doc.data().price}}</h5>
-            <h5 class="mb-1">{{item.payload.doc.data().type}}</h5>
-            <img class="mb-1" src={{item.payload.doc.data().downloadURL}}>
+<div class="list">
+    <div *ngFor="let item of items" class="container">
+        <mat-card>
+            <h5 class="item">Name: {{item.payload.doc.data().title}}</h5>
+            <h5 class="item">Description: {{item.payload.doc.data().description}}</h5>
+            <h5 class="item">Price: {{item.payload.doc.data().price}}</h5>
+            <h5 class="item">Type: {{item.payload.doc.data().type}}</h5>
             <button (click)="viewDetails(item)">Modify</button>
-        </div>
+            <div class="image">
+                <img mat-card-image class="mb-1" src={{item.payload.doc.data().downloadURL}}>
+            </div>
+        </mat-card>
     </div>
 </div>

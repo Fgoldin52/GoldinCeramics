@@ -5,7 +5,14 @@ nav {
     color: white;
     padding: 20px;
     background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
 }
 p:first-child {
     margin-left: 70px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
