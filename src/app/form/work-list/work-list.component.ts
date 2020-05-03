@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './../../firebase.service';
 import { Router } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-work-list',
@@ -13,7 +15,8 @@ export class WorkListComponent implements OnInit {
 
   constructor(
     public firebaseService: FirebaseService,
-    private router: Router
+    private router: Router,
+    private db: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -27,11 +30,8 @@ export class WorkListComponent implements OnInit {
       });
   }
 
-  filterVase() {
-    this.firebaseService.filterVases()
-      .subscribe(result => {
-        this.items = result;
-      });
+  filterVases() {
+    return this.db.collection('works', ref => ref.where('type', '==', 'Vase')).snapshotChanges();
   }
 
   viewDetails(item) {
