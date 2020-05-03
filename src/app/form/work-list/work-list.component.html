@@ -16,6 +16,7 @@
             <h5 class="mb-1">{{item.payload.doc.data().description}}</h5>
             <h5 class="mb-1">{{item.payload.doc.data().price}}</h5>
             <h5 class="mb-1">{{item.payload.doc.data().type}}</h5>
+            <img class="mb-1" src={{item.payload.doc.data().downloadURL}}>
             <button (click)="viewDetails(item)">Modify</button>
         </div>
     </div>
