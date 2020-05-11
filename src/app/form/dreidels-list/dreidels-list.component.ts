@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from './../../../firebase.service';
+import { FirebaseService } from './../../firebase.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,10 +25,6 @@ export class DreidelsListComponent implements OnInit {
       .subscribe(result => {
         this.items = result;
       });
-  }
-
-  viewDetails(item) {
-    this.router.navigate(['form/work-detail/' + item.payload.doc.id]);
   }
 
 }

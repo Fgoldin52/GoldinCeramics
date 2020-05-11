@@ -1,0 +1,15 @@
+<div class="list">
+    <div *ngFor="let item of items" class="container">
+        <mat-card>
+            <h5 class="item">{{item.payload.doc.data().title}}</h5>
+            <div class="sub-container">
+                <h5 class="item">${{item.payload.doc.data().price}}</h5>
+                <a href="{{item.payload.doc.data().etsy}}">Buy on Etsy</a>
+            </div>
+            <div class="image">
+                <img mat-card-image src={{item.payload.doc.data().downloadURL}}>
+            </div>
+            <button (click)="viewDetails(item)">Modify</button>
+        </mat-card>
+    </div>
+</div>

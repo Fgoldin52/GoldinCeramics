@@ -50,7 +50,8 @@ export class WorkDetailComponent implements OnInit {
       title: [this.item.title, Validators.required],
       description: [this.item.description, Validators.required],
       price: [this.item.price, Validators.required],
-      type: [this.item.type, Validators.required]
+      etsy: [this.item.etsy, Validators.required],
+      type: [this.item.type, Validators.required],
     });
   }
 

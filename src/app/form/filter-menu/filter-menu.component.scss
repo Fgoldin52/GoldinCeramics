@@ -1,0 +1,25 @@
+.menu {
+    padding-left: 30px;
+    padding-top: 50px;
+    height: 100%;
+    position: fixed; 
+}
+.filter-by-type {
+    font-weight: bold;
+}
+.filter-by-price {
+    font-weight: bold;
+    padding-top:30px;
+}
+.item {
+    padding: 5px;
+    color: gray;
+}
+
+button:hover {
+    color: red;
+}
+
+button:active {
+    color: red;
+}

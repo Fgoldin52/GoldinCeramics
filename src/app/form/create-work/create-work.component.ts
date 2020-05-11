@@ -32,10 +32,11 @@ export class CreateWorkComponent implements OnInit {
     { value: 'Cup' }
   ];
 
-  title = 'cloudsSorage';
+  etsy: string;
   selectedFile: File = null;
   ab;
   downloadURL: Observable<string>;
+  price: number;
 
   constructor(
     private fb: FormBuilder,
@@ -53,6 +54,7 @@ export class CreateWorkComponent implements OnInit {
       title: ['', Validators.required],
       description: ['', Validators.required],
       price: ['', Validators.required],
+      etsy: [''],
       type: [''],
       url: ['']
     });
@@ -63,6 +65,7 @@ export class CreateWorkComponent implements OnInit {
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       price: new FormControl('', Validators.required),
+      etsy: new FormControl('', Validators.required),
       type: new FormControl('')
     });
   }
@@ -100,7 +103,8 @@ export class CreateWorkComponent implements OnInit {
     return this.db.collection('works').add({
       title: value.title,
       description: value.description,
-      price: value.price,
+      price: +value.price,
+      etsy: value.etsy,
       type: value.type,
       downloadURL: this.downloadURL
     });

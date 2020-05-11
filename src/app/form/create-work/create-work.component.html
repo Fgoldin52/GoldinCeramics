@@ -20,6 +20,12 @@
 
     <div class="form-group">
         <mat-form-field class="input-style">
+            <input matInput placeholder="Etsy Link" class="form-control" formControlName="etsy">
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field class="input-style">
             <mat-label>Type</mat-label>
             <mat-select formControlName="type">
                 <mat-option *ngFor="let type of types" [value]="type.value">
