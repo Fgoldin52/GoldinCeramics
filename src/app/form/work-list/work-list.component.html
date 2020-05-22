@@ -1,6 +1,23 @@
-<div class="separator">
+<div class="main">
     <div class="filter">
-        <app-filter-menu></app-filter-menu>
+        <p class="filter-type">Filter by Type</p>
+        <div class="filter-menu">
+            <button class="item" mat-button (click)="getData()">All</button>
+            <button class="item" mat-button (click)="getDreidels()">Dreidels</button>
+            <button class="item" mat-button (click)="getPlates()">Plates</button>
+            <button class="item" mat-button (click)="getCandleSticks()">Candelsticks</button>
+            <button class="item" mat-button (click)="getVases()">Vases</button>
+            <button class="item" mat-button (click)="getMezuzahs()">Mezuzahs</button>
+            <button class="item" mat-button (click)="getMirrors()">Mirrors</button>
+        </div>
+        <p class="filter-price">Filter by Price</p>
+        <div class="filter-menu">
+            <button class="item" mat-button (click)="getData()">All</button>
+            <button class="item" mat-button (click)="getUnder100()">Under $100</button>
+            <button class="item" mat-button (click)="getUnder250()">$100 - $249</button>
+            <button class="item" mat-button (click)="getUnder500()">$250 - $500</button>
+            <button class="item" mat-button (click)="getOver500()">Over $500</button>
+        </div>
     </div>
     <app-list [items]="items"></app-list>
 </div>

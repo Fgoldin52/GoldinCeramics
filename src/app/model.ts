@@ -1,3 +1,7 @@
-export class Test {
-    name: string;
+export class Item {
+    title: string;
+    description: string;
+    price: number;
+    etsy: string;
+    type: string;
 }

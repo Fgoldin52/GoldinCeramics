@@ -1,7 +1,31 @@
 .separator {
     display: flex;
-    direction: column;
+    flex-direction: row;
 }
+.main {
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 100%;
+}
+
+.item {
+    padding: 5px;
+    color: gray;
+}
+.filter-type {
+    font-weight: bold;
+}
+
+.filter-price {
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.filter-menu {
+    display: flex;
+    flex-direction: column;
+}
+
 .filter {
-    padding-top: 100px;
+    position: fixed;
 }
