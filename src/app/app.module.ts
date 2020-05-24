@@ -39,6 +39,8 @@ import { FilterMenuComponent } from './form/filter-menu/filter-menu.component';
 import { UpdateString } from './update-string.pipe';
 import { ListComponent } from './form/list/list.component';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +72,8 @@ import { ListComponent } from './form/list/list.component';
     MatSelectModule,
     MatSidenavModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    InfiniteScrollModule
   ],
   providers: [AngularFirestore, EditUserResolver, AngularFireStorage, UpdateString],
   bootstrap: [AppComponent]
