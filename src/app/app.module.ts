@@ -27,8 +27,7 @@ import {
   MatFormFieldModule,
   MatSelectModule,
   MatSidenavModule,
-  MatIconModule,
-  MatIcon
+  MatDividerModule
 } from '@angular/material';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
@@ -40,6 +39,7 @@ import { UpdateString } from './update-string.pipe';
 import { ListComponent } from './form/list/list.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ViewWorkComponent } from './form/view-work/view-work.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     PracticeComponent,
     FilterMenuComponent,
     UpdateString,
-    ListComponent
+    ListComponent,
+    ViewWorkComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +72,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatFormFieldModule,
     MatSelectModule,
     MatSidenavModule,
+    MatDividerModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     InfiniteScrollModule

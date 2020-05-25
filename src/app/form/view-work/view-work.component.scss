@@ -1,0 +1,31 @@
+.text {
+    padding-right: 100px;
+    width: 35%;
+}
+
+.image {
+    height: 500px;
+    width: 500px;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    direction: row;
+    padding: 200px 100px 200px 100px;
+}
+
+.item {
+    font-weight: lighter;
+}
+
+.header {
+    font-weight: bold;
+}
+
+a {
+    width: 100%;
+    margin-top: 20px;
+}
+
+

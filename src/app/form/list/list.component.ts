@@ -25,4 +25,8 @@ export class ListComponent implements OnInit {
     this.router.navigate(['form/work-detail/' + item.payload.doc.id]);
   }
 
+  view(item) {
+    this.router.navigate(['form/view-work/' + item.payload.doc.id]);
+  }
+
 }

@@ -53,6 +53,10 @@ export class CreateWorkComponent implements OnInit {
     this.exampleForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
+      height: ['', Validators.required],
+      width: ['', Validators.required],
+      depth: ['', Validators.required],
+      materials: ['', Validators.required],
       price: ['', Validators.required],
       etsy: [''],
       type: [''],
@@ -64,6 +68,10 @@ export class CreateWorkComponent implements OnInit {
     this.exampleForm = this.fb.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
+      height: new FormControl('', Validators.required),
+      width: new FormControl('', Validators.required),
+      depth: new FormControl('', Validators.required),
+      materials: new FormControl('', Validators.required),
       price: new FormControl('', Validators.required),
       etsy: new FormControl('', Validators.required),
       type: new FormControl('')
@@ -103,6 +111,10 @@ export class CreateWorkComponent implements OnInit {
     return this.db.collection('works').add({
       title: value.title,
       description: value.description,
+      height: value.height,
+      width: value.width,
+      depth: value.depth,
+      materials: value.materials,
       price: +value.price,
       etsy: value.etsy,
       type: value.type,

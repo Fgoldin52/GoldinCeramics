@@ -7,6 +7,7 @@ import { WorkDetailComponent } from './form/work-detail/work-detail.component';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { PracticeComponent } from './practice/practice.component';
+import { ViewWorkComponent } from './form/view-work/view-work.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'form/work-detail/:id',
     component: WorkDetailComponent,
+    resolve: { data: EditUserResolver }
+  },
+  {
+    path: 'form/view-work/:id',
+    component: ViewWorkComponent,
     resolve: { data: EditUserResolver }
   },
   {

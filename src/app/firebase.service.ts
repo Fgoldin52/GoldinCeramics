@@ -54,7 +54,6 @@ export class FirebaseService {
   }
 
   updateUser(userKey, value) {
-    value.nameToSearch = value.name.toLowerCase();
     return this.db.collection('works').doc(userKey).set(value);
   }
 
@@ -70,6 +69,10 @@ export class FirebaseService {
     return this.db.collection('works').add({
       title: value.title,
       description: value.description,
+      height: value.height,
+      width: value.width,
+      depth: value.depth,
+      materials: value.materials,
       price: value.price,
       type: value.type,
       etsy: value.etsy

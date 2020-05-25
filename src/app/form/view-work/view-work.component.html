@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="text">
+        <mat-divider></mat-divider>
+        <h5 class="header">Name</h5>
+        <h5 class="item">{{item.title}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Description</h5>
+        <h5 class="item">{{item.description}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Price</h5>
+        <h5 class="item">${{item.price}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Materials</h5>
+        <h5 class="item">${{item.materials}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Dimensions</h5>
+        <h5 class="item">{{item.height}}" x {{item.width}}" x {{item.depth}}"</h5>
+        <a mat-raised-button color="warn" href="{{item.etsy}}">Purchase</a>
+    </div>
+    <div class="image">
+        <img mat-card-image src={{item.downloadURL}}>
+    </div>
+    <div>
