@@ -15,9 +15,12 @@
         <mat-divider class="divider"></mat-divider>
         <h5 class="header">Dimensions</h5>
         <h5 class="item">{{item.height}}" x {{item.width}}" x {{item.depth}}"</h5>
-        <a mat-raised-button color="warn" href="{{item.etsy}}">Purchase</a>
+        <div class="buttons">
+            <a mat-raised-button color="warn" href="{{item.etsy}}">Purchase</a>
+            <img class="facebook" src='./../../../assets/images/facebook_blue_50.png' shareButton="facebook" [url]="'https://www.goldinceramics.com'">
+        </div>
     </div>
     <div class="image">
         <img mat-card-image src={{item.downloadURL}}>
     </div>
-    <div>
+</div>

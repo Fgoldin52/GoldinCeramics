@@ -27,7 +27,8 @@ import {
   MatFormFieldModule,
   MatSelectModule,
   MatSidenavModule,
-  MatDividerModule
+  MatDividerModule,
+  MatIconModule
 } from '@angular/material';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
@@ -40,6 +41,9 @@ import { ListComponent } from './form/list/list.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ViewWorkComponent } from './form/view-work/view-work.component';
+import { ShareButtonModule } from '@ngx-share/button';
+import { ShareButtonsModule } from '@ngx-share/buttons';
+import { ShareModule } from '@ngx-share/core';
 
 @NgModule({
   declarations: [
@@ -73,9 +77,13 @@ import { ViewWorkComponent } from './form/view-work/view-work.component';
     MatSelectModule,
     MatSidenavModule,
     MatDividerModule,
+    MatIconModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ShareButtonModule,
+    ShareButtonsModule,
+    ShareModule
   ],
   providers: [AngularFirestore, EditUserResolver, AngularFireStorage, UpdateString],
   bootstrap: [AppComponent]
