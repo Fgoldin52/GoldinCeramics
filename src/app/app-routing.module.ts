@@ -8,11 +8,17 @@ import { EditUserResolver } from './form/edit-work/edit-work.resolver';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { PracticeComponent } from './practice/practice.component';
 import { ViewWorkComponent } from './form/view-work/view-work.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { UserComponent } from './authentication/user/user.component';
+import { AuthGuard } from './authentication/auth.guard';
+import { UserResolver } from './authentication/user.resolver';
 
 const routes: Routes = [
   {
     path: 'form/create-work',
     component: CreateWorkComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'form/work-list',
@@ -39,6 +45,21 @@ const routes: Routes = [
   {
     path: 'practice',
     component: PracticeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+    resolve: { data: UserResolver }
   }
 ];
 

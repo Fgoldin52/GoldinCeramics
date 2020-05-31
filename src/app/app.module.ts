@@ -44,6 +44,14 @@ import { ViewWorkComponent } from './form/view-work/view-work.component';
 import { ShareButtonModule } from '@ngx-share/button';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareModule } from '@ngx-share/core';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { UserComponent } from './authentication/user/user.component';
+import { AuthGuard } from './authentication/auth.guard';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserService } from './authentication/user.service';
+import { AuthService } from './authentication/auth.service';
+import { UserResolver } from './authentication/user.resolver';
 
 @NgModule({
   declarations: [
@@ -57,7 +65,10 @@ import { ShareModule } from '@ngx-share/core';
     FilterMenuComponent,
     UpdateString,
     ListComponent,
-    ViewWorkComponent
+    ViewWorkComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +96,15 @@ import { ShareModule } from '@ngx-share/core';
     ShareButtonsModule,
     ShareModule
   ],
-  providers: [AngularFirestore, EditUserResolver, AngularFireStorage, UpdateString],
+  providers: [AngularFirestore,
+    EditUserResolver,
+    AngularFireStorage,
+    UpdateString,
+    AngularFireAuth,
+    AuthGuard,
+    UserService,
+    AuthService,
+    UserResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
