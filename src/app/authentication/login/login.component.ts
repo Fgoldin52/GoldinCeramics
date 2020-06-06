@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from './../auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -18,7 +19,8 @@ export class LoginComponent {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private location: Location
   ) {
     this.createForm();
   }
@@ -58,6 +60,15 @@ export class LoginComponent {
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
+      });
+  }
+
+  logout() {
+    this.authService.doLogout()
+      .then((res) => {
+        this.location.back();
+      }, (error) => {
+        console.log('Logout error', error);
       });
   }
 }

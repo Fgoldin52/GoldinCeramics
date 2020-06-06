@@ -17,10 +17,10 @@ export class UserService {
         return new Promise<any>((resolve, reject) => {
             // tslint:disable-next-line:no-shadowed-variable
             const user = firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    resolve(user);
-                } else {
+                if (!user) {
                     reject('No user logged in');
+                } else {
+                    resolve(user);
                 }
             });
         });
