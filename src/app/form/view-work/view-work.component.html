@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-desktop">
     <div class="text">
         <mat-divider></mat-divider>
         <h5 class="header">Name</h5>
@@ -22,5 +22,31 @@
     </div>
     <div class="image">
         <img mat-card-image src={{item.downloadURL}}>
+    </div>
+</div>
+
+<div class="container-mobile">
+    <div class="image">
+        <img mat-card-image src={{item.downloadURL}}>
+    </div>
+    <div class="text">
+        <div class="buttons">
+            <a mat-raised-button color="warn" href="{{item.etsy}}">Purchase</a>
+            <img class="facebook" src='./../../../assets/images/facebook_blue_50.png' shareButton="facebook" [url]="'https://www.goldinceramics.com'">
+        </div>
+        <h5 class="header-first">Name</h5>
+        <h5 class="item">{{item.title}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Description</h5>
+        <h5 class="item">{{item.description}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Price</h5>
+        <h5 class="item">${{item.price}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Materials</h5>
+        <h5 class="item">${{item.materials}}</h5>
+        <mat-divider class="divider"></mat-divider>
+        <h5 class="header">Dimensions</h5>
+        <h5 class="item">{{item.height}}" x {{item.width}}" x {{item.depth}}"</h5>
     </div>
 </div>

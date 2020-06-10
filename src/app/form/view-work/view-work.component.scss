@@ -1,44 +1,105 @@
-.text {
-    padding-right: 100px;
-    width: 35%;
+@media (min-width: 900px) {
+
+    .container-desktop {
+        display: flex;
+        direction: row;
+        padding: 200px 100px 200px 100px;
+    }
+
+    .container-mobile {
+        display: none;
+    }
+
+    .text {
+        padding-right: 100px;
+        width: 35%;
+    }
+
+    .image {
+        height: 500px;
+        width: 500px;
+        padding: 20px;
+    }
+
+    .item {
+        font-weight: lighter;
+    }
+
+    .header {
+        font-weight: bold;
+    }
+
+    a {
+        width: 60%;
+        margin-top: 20px;
+    }
+
+    .facebook {
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .buttons {
+        display: flex;
+        direction: row;
+    }
 }
 
-.image {
-    height: 500px;
-    width: 500px;
-    padding: 20px;
-}
+@media only screen and (max-width: 899px) {
+    
+    .container-mobile {
+        padding: 100px 50px 100px 50px;
+        display: inline-block;
+    }
 
-.container {
-    display: flex;
-    direction: row;
-    padding: 200px 100px 200px 100px;
-}
+    .container-desktop {
+        display: none;
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
 
-.item {
-    font-weight: lighter;
-}
 
-.header {
-    font-weight: bold;
-}
+    .text {
+        width: 100%;
+        float: left;
+    }
+    
+    .item {
+        font-weight: lighter;
+    }
+    
+    .header {
+        font-weight: bold;
+    }
 
-a {
-    width: 60%;
-    margin-top: 20px;
-}
+    .header-first {
+        margin-top: 20px;
+    }
+    
+    a {
+        width: 60%;
+        margin-top: 20px;
+    }
+    
+    .facebook {
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    
+    .buttons {
+        display: flex;
+        direction: row;
+    }
 
-.facebook {
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-.buttons {
-    display: flex;
-    direction: row;
 }
 
 

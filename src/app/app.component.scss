@@ -1,32 +1,102 @@
-nav {
-    display: grid;
-    grid-auto-flow: column;
-    color: black;
-    background-color:#F0F0F0;
-    width: 100%;
-    align-items: center;
-    position: fixed;
-    z-index: 1;
-}
-h3 {
-    padding-bottom: 20px;
-    padding-left: 20px;
+@media (min-width: 900px) {   
+    .mobile {
+        display: none;
+    }
+    mat-toolbar {
+        display: grid;
+        grid-auto-flow: column;
+        color: black;
+        background-color:#F0F0F0;
+        width: 100%;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+    }
 
+    h3 {
+        padding-bottom: 5px;
+        padding-left: 20px;
+
+    }
+
+    hr {
+        height:20px;
+        background-color: black;
+        color: black;
+    }
+
+    p:nth-child(2) {
+        margin-left: 50px;
+    }
+
+    p:hover {
+        color: red;
+    }
+
+    p:focus {
+        outline: none;
+    }
+
+    h3:hover {
+        color: red;
+    }
+
+    p {
+        font-weight: normal;
+        font-size: 16px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
 }
-hr {
-    height:20px;
-    background-color: black;
-    color: black;
-}
-p:nth-child(2) {
-    margin-left: 50px;
-}
-p:hover {
-    color: red;
-}
-h3:hover {
-    color: red;
-}
-html {
-    scroll-behavior: smooth;
+
+@media only screen and (max-width: 899px) {
+    .desktop {
+        display: none;
+    }
+    mat-toolbar {
+        display: grid;
+        grid-auto-flow: column;
+        color: black;
+        background-color:#F0F0F0;
+        width: 100%;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+    }
+    button {
+        width: 5%;
+        margin-right: 20px;
+    }
+
+    h3 {
+        margin-right: 170px;
+    }
+
+    hr {
+        height:20px;
+        background-color: black;
+        color: black;
+    }
+
+    p:hover {
+        color: red;
+    }
+
+    p:focus {
+        outline: none;
+    }
+
+    h3:hover {
+        color: red;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    mat-icon:hover {
+        color: red;
+    }
 }

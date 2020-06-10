@@ -1,32 +1,94 @@
-.separator {
-    display: flex;
-    flex-direction: row;
-}
-.main {
-    padding-top: 100px;
-    padding-left: 30px;
-    height: 100%;
+@media (min-width: 900px) {
+    .main-desktop {
+        padding-top: 100px;
+        padding-left: 30px;
+        height: 100%;
+    }
+
+    .main-mobile {
+        padding-top: 100px;
+        padding-left: 30px;
+        height: 100%;
+        display: none;
+    }
+
+    .item {
+        padding: 5px;
+        color: gray;
+    }
+    .filter-type {
+        font-weight: bold;
+    }
+
+    .filter-price {
+        font-weight: bold;
+        padding-top: 20px;
+    }
+
+    .filter-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter {
+        position: fixed;
+        padding-top: 20px;
+    }
 }
 
-.item {
-    padding: 5px;
-    color: gray;
-}
-.filter-type {
-    font-weight: bold;
-}
+@media only screen and (max-width: 899px) {
+    .main-desktop {
+        padding-top: 100px;
+        padding-left: 30px;
+        height: 100%;
+        display: none;
+    }
 
-.filter-price {
-    font-weight: bold;
-    padding-top: 20px;
-}
+    .main-mobile {
+        padding-top: 50px;
+        height: 100%;
+    }
 
-.filter-menu {
-    display: flex;
-    flex-direction: column;
-}
+    .item {
+        padding: 5px;
+        color: gray;
+    }
+    .filter-type {
+        background-color: #F5F5F5;
+        border-radius: 10px;
+        color: black;
+        font-weight: normal;
+    }
 
-.filter {
-    position: fixed;
-    padding-top: 20px;
+    .filter-type:hover {
+        color: red;
+    }
+
+    .filter-price:hover {
+        color: red;
+    }
+
+    .filter-price {
+        background-color: #F5F5F5;
+        border-radius: 10px;
+        color: black;
+        margin-left: 20px;
+        font-weight: normal;
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        background-color: white;
+        position: fixed;
+        z-index: 2;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .items-list {
+        padding: 200px;
+    }
+
 }

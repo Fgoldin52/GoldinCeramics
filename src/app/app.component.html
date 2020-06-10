@@ -1,4 +1,4 @@
-<nav>
+<mat-toolbar class="desktop">
     <h3 routerLink="/form/work-list" routerLinkActive="active-link">Gold'n Ceramics</h3>
     <p mat-menu-item routerLink="/login" routerLinkActive="active-link">
         <span>Login</span>
@@ -15,5 +15,30 @@
     <p mat-menu-item routerLink="/practice" routerLinkActive="active-link">
         <span>Practice</span>
     </p>
-</nav>
+</mat-toolbar>
+
+<mat-toolbar class="mobile">
+    <button mat-button [matMenuTriggerFor]="main">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #main="matMenu">
+        <p mat-menu-item routerLink="/login" routerLinkActive="active-link">
+            <span>Login</span>
+        </p>
+        <p mat-menu-item routerLink="/form/create-work" routerLinkActive="active-link">
+            <span>Create Work</span>
+        </p>
+        <p mat-menu-item routerLink="/form/work-list" routerLinkActive="active-link">
+            <span>Purchase</span>
+        </p>
+        <p mat-menu-item routerLink="/send-email" routerLinkActive="active-link">
+            <span>Contact Us</span>
+        </p>
+        <p mat-menu-item routerLink="/practice" routerLinkActive="active-link">
+            <span>Practice</span>
+        </p>
+    </mat-menu>
+    <h3 routerLink="/form/work-list" routerLinkActive="active-link">Gold'n Ceramics</h3>
+</mat-toolbar>
+
 <router-outlet></router-outlet>

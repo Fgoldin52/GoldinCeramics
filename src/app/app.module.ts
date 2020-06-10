@@ -28,7 +28,9 @@ import {
   MatSelectModule,
   MatSidenavModule,
   MatDividerModule,
-  MatIconModule
+  MatIconModule,
+  MatToolbarModule,
+  MatMenuModule
 } from '@angular/material';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
@@ -89,6 +91,8 @@ import { UserResolver } from './authentication/user.resolver';
     MatSidenavModule,
     MatDividerModule,
     MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     InfiniteScrollModule,
