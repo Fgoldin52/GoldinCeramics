@@ -5,7 +5,6 @@ import { WorkListComponent } from './form/work-list/work-list.component';
 import { EditWorkComponent } from './form/edit-work/edit-work.component';
 import { WorkDetailComponent } from './form/work-detail/work-detail.component';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
-import { SendEmailComponent } from './send-email/send-email.component';
 import { PracticeComponent } from './practice/practice.component';
 import { ViewWorkComponent } from './form/view-work/view-work.component';
 import { LoginComponent } from './authentication/login/login.component';
@@ -13,6 +12,7 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { UserComponent } from './authentication/user/user.component';
 import { AuthGuard } from './authentication/auth.guard';
 import { UserResolver } from './authentication/user.resolver';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
@@ -39,12 +39,8 @@ const routes: Routes = [
     resolve: { data: EditUserResolver }
   },
   {
-    path: 'send-email',
-    component: SendEmailComponent
-  },
-  {
-    path: 'practice',
-    component: PracticeComponent
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'login',

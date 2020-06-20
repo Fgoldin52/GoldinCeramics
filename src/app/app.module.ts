@@ -34,7 +34,6 @@ import {
 } from '@angular/material';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
-import { SendEmailComponent } from './send-email/send-email.component';
 import { PracticeComponent } from './practice/practice.component';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FilterMenuComponent } from './form/filter-menu/filter-menu.component';
@@ -54,6 +53,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { UserService } from './authentication/user.service';
 import { AuthService } from './authentication/auth.service';
 import { UserResolver } from './authentication/user.resolver';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,6 @@ import { UserResolver } from './authentication/user.resolver';
     WorkListComponent,
     EditWorkComponent,
     WorkDetailComponent,
-    SendEmailComponent,
     PracticeComponent,
     FilterMenuComponent,
     UpdateString,
@@ -70,7 +69,8 @@ import { UserResolver } from './authentication/user.resolver';
     ViewWorkComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
