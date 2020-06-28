@@ -32,10 +32,10 @@ import {
   MatToolbarModule,
   MatMenuModule
 } from '@angular/material';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
 import { PracticeComponent } from './practice/practice.component';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { FilterMenuComponent } from './form/filter-menu/filter-menu.component';
 import { UpdateString } from './update-string.pipe';
 import { ListComponent } from './form/list/list.component';
@@ -54,6 +54,11 @@ import { UserService } from './authentication/user.service';
 import { AuthService } from './authentication/auth.service';
 import { UserResolver } from './authentication/user.resolver';
 import { AboutComponent } from './about/about.component';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -95,10 +100,13 @@ import { AboutComponent } from './about/about.component';
     MatMenuModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     InfiniteScrollModule,
     ShareButtonModule,
     ShareButtonsModule,
-    ShareModule
+    ShareModule,
+    AngularFireStorageModule
   ],
   providers: [AngularFirestore,
     EditUserResolver,
@@ -108,7 +116,10 @@ import { AboutComponent } from './about/about.component';
     AuthGuard,
     UserService,
     AuthService,
-    UserResolver],
+    UserResolver,
+    AngularFirestoreModule,
+    AngularFireModule,
+    { provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

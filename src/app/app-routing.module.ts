@@ -5,7 +5,6 @@ import { WorkListComponent } from './form/work-list/work-list.component';
 import { EditWorkComponent } from './form/edit-work/edit-work.component';
 import { WorkDetailComponent } from './form/work-detail/work-detail.component';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
-import { PracticeComponent } from './practice/practice.component';
 import { ViewWorkComponent } from './form/view-work/view-work.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
@@ -48,8 +47,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: RegisterComponent,
-    canActivate: [AuthGuard]
+    component: RegisterComponent
   },
   {
     path: 'user',

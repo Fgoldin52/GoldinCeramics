@@ -34,12 +34,11 @@ export class CreateWorkComponent implements OnInit {
 
   etsy: string;
   selectedFile: File = null;
-  ab;
   downloadURL: Observable<string>;
   price: number;
 
   constructor(
-    private fb: FormBuilder,
+    private test: FormBuilder,
     public firebaseService: FirebaseService,
     private storage: AngularFireStorage,
     private db: AngularFirestore
@@ -50,7 +49,7 @@ export class CreateWorkComponent implements OnInit {
   }
 
   createForm() {
-    this.exampleForm = this.fb.group({
+    this.exampleForm = this.test.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
       height: ['', Validators.required],
@@ -65,7 +64,7 @@ export class CreateWorkComponent implements OnInit {
   }
 
   resetFields() {
-    this.exampleForm = this.fb.group({
+    this.exampleForm = this.test.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       height: new FormControl('', Validators.required),
@@ -77,6 +76,7 @@ export class CreateWorkComponent implements OnInit {
       type: new FormControl('')
     });
   }
+
   onSubmit(value) {
     this.createWork(value)
       .then(
@@ -86,6 +86,7 @@ export class CreateWorkComponent implements OnInit {
         }
       );
   }
+
   onFileSelected(event) {
     const n = Date.now();
     const file = event.target.files[0];
