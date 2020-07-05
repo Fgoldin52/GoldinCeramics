@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
                 .then(user => {
                     return resolve(true);
                 }, err => {
-                    this.router.navigate(['form/work-list']);
+                    this.router.navigate(['purchase']);
                     return reject(false);
                 });
         });

@@ -12,15 +12,16 @@ import { UserComponent } from './authentication/user/user.component';
 import { AuthGuard } from './authentication/auth.guard';
 import { UserResolver } from './authentication/user.resolver';
 import { AboutComponent } from './about/about.component';
+import { AuthService } from './authentication/auth.service';
 
 const routes: Routes = [
   {
-    path: 'form/create-work',
+    path: 'create',
     component: CreateWorkComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'form/work-list',
+    path: 'purchase',
     component: WorkListComponent
   },
   {
@@ -33,7 +34,7 @@ const routes: Routes = [
     resolve: { data: EditUserResolver }
   },
   {
-    path: 'form/view-work/:id',
+    path: 'view-work/:id',
     component: ViewWorkComponent,
     resolve: { data: EditUserResolver }
   },

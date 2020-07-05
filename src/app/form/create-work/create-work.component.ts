@@ -4,7 +4,7 @@ import { FirebaseService } from '../../firebase.service';
 import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 interface Type {
   value: string;

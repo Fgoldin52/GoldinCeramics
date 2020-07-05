@@ -32,7 +32,7 @@ import {
   MatToolbarModule,
   MatMenuModule
 } from '@angular/material';
-import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { EditUserResolver } from './form/edit-work/edit-work.resolver';
 import { PracticeComponent } from './practice/practice.component';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
@@ -55,10 +55,9 @@ import { AuthService } from './authentication/auth.service';
 import { UserResolver } from './authentication/user.resolver';
 import { AboutComponent } from './about/about.component';
 
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { PathLocationStrategy, LocationStrategy } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

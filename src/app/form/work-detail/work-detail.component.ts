@@ -5,7 +5,7 @@ import { FirebaseService } from './../../firebase.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 interface Type {
   value: string;
@@ -70,7 +70,7 @@ export class WorkDetailComponent implements OnInit {
     this.updateUser(this.item.id, value)
       .then(
         res => {
-          this.router.navigate(['form/work-list']);
+          this.router.navigate(['purchase']);
         });
   }
 
@@ -78,7 +78,7 @@ export class WorkDetailComponent implements OnInit {
     this.firebaseService.deleteUser(this.item.id)
       .then(
         res => {
-          this.router.navigate(['form/work-list']);
+          this.router.navigate(['purchase']);
         },
         err => {
           console.log(err);

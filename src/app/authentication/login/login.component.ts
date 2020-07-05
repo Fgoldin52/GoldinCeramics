@@ -54,13 +54,17 @@ export class LoginComponent {
   }
 
   tryLogin(value) {
-    this.authService.doLogin(value)
-      .then(res => {
-        this.router.navigate(['/form/work-list']);
-      }, err => {
-        console.log(err);
-        this.errorMessage = err.message;
-      });
+    if (value.email === 'fgoldin52@gmail.com') {
+      this.authService.doLogin(value)
+        .then(res => {
+          this.router.navigate(['purchase']);
+        }, err => {
+          console.log(err);
+          this.errorMessage = err.message;
+        });
+    } else {
+      console.log('Invalid credentials');
+    }
   }
 
   logout() {

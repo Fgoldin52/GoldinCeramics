@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FirebaseService } from './../../firebase.service';
 import { Router } from '@angular/router';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-list',
@@ -22,11 +22,11 @@ export class ListComponent implements OnInit {
   }
 
   viewDetails(item) {
-    this.router.navigate(['form/work-detail/' + item.payload.doc.id]);
+    this.router.navigate(['view-work/' + item.payload.doc.id]);
   }
 
   view(item) {
-    this.router.navigate(['form/view-work/' + item.payload.doc.id]);
+    this.router.navigate(['view-work/' + item.payload.doc.id]);
   }
 
 }
