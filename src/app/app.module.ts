@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { User } from './user';
 
 import {
   MatInputModule,
@@ -118,6 +119,7 @@ import { PathLocationStrategy, LocationStrategy } from '@angular/common';
     UserResolver,
     AngularFirestoreModule,
     AngularFireModule,
+    User,
     { provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })

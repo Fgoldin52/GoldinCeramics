@@ -3,6 +3,7 @@ import { AuthService } from './../auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { User } from './../../user';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -11,6 +12,7 @@ import { Location } from '@angular/common';
   styleUrls: ['login.component.scss']
 })
 export class LoginComponent {
+  user: User;
 
   loginForm: FormGroup;
   // tslint:disable-next-line:no-inferrable-types

@@ -18,4 +18,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
+  get isAdmin() {
+    return this.authService.user.isAdmin;
+  }
+
 }

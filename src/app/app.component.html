@@ -6,10 +6,10 @@
     <p mat-menu-item routerLink="/login" routerLinkActive="active-link">
         <span>Login</span>
     </p>
-    <p mat-menu-item routerLink="/create" routerLinkActive="active-link">
+    <p mat-menu-item routerLink="/create" routerLinkActive="active-link" *ngIf="isAdmin">
         <span>Create</span>
     </p>
-    <p mat-menu-item routerLink="/purchase" routerLinkActive="active-link">
+    <p mat-menu-item routerLink="/purchase" routerLinkActive="active-link" *ngIf="isAdmin">
         <span>Purchase</span>
     </p>
 </mat-toolbar>

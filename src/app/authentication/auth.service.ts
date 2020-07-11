@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { User } from './../user';
 
 @Injectable()
 export class AuthService {
 
     constructor(
-        public afAuth: AngularFireAuth
+        public afAuth: AngularFireAuth,
+        public user: User
     ) { }
 
     doFacebookLogin() {
@@ -67,6 +69,7 @@ export class AuthService {
             firebase.auth().signInWithEmailAndPassword(value.email, value.password)
                 .then(res => {
                     resolve(res);
+                    this.user.isAdmin = true;
                 }, err => reject(err));
         });
     }
@@ -76,10 +79,15 @@ export class AuthService {
             if (firebase.auth().currentUser) {
                 this.afAuth.auth.signOut();
                 resolve();
+                this.user.isAdmin = false;
             } else {
                 reject();
             }
         });
+    }
+
+    hasRole(user: User) {
+        user.isAdmin = true;
     }
 
 
