@@ -6,7 +6,6 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, tap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { currentId } from 'async_hooks';
 
 interface Type {
   value: string;
