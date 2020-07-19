@@ -29,4 +29,8 @@ export class ListEditComponent implements OnInit {
     this.router.navigate(['form/update-image/' + item.payload.doc.id]);
   }
 
+  view(item) {
+    this.router.navigate(['view-work/' + item.payload.doc.id]);
+  }
+
 }
