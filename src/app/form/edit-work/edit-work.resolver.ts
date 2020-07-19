@@ -9,7 +9,7 @@ export class EditUserResolver implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot, ) {
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const userId = route.paramMap.get('id');
             this.firebaseService.getUser(userId)
                 .subscribe(

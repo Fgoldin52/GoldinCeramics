@@ -3,9 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { FirebaseService } from './../../firebase.service';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { finalize, tap } from 'rxjs/operators';
+import { finalize, tap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { currentId } from 'async_hooks';
 
 interface Type {
   value: string;
@@ -17,9 +18,12 @@ interface Type {
   styleUrls: ['./work-detail.component.scss']
 })
 export class WorkDetailComponent implements OnInit {
+
   exampleForm: FormGroup;
   item: any;
   downloadURL: Observable<string>;
+  currentdownloadURL: string;
+
 
   types: Type[] = [
     { value: 'Vase' },
@@ -46,9 +50,11 @@ export class WorkDetailComponent implements OnInit {
       if (data) {
         this.item = data.payload.data();
         this.item.id = data.payload.id;
+        this.downloadURL = this.item.downloadURL;
         this.createForm();
       }
     });
+
   }
 
   createForm() {
@@ -121,6 +127,5 @@ export class WorkDetailComponent implements OnInit {
       downloadURL: this.downloadURL
     });
   }
-
 
 }

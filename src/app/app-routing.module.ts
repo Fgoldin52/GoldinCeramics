@@ -12,7 +12,7 @@ import { UserComponent } from './authentication/user/user.component';
 import { AuthGuard } from './authentication/auth.guard';
 import { UserResolver } from './authentication/user.resolver';
 import { AboutComponent } from './about/about.component';
-import { AuthService } from './authentication/auth.service';
+import { ModifyListComponent } from './form/modify-list/modify-list.component';
 
 const routes: Routes = [
   {
@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'modify',
+    component: ModifyListComponent
   },
   {
     path: 'user',

@@ -7,7 +7,7 @@
                 <img mat-card-image src={{item.payload.doc.data().downloadURL}}>
             </div>
             <div class="sub-container">
-                <a mat-raised-button color="warn" href="{{item.payload.doc.data().etsy}}">Purchase</a>
+                <button (click)="modifyItem(item)">Modify</button>
             </div>
         </mat-card>
     </div>

@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-list-edit',
+  templateUrl: './list-edit.component.html',
+  styleUrls: ['./list-edit.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListEditComponent implements OnInit {
 
   @Input() items: Array<any>;
 
@@ -21,16 +21,12 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
-  viewDetails(item) {
-    this.router.navigate(['view-work/' + item.payload.doc.id]);
-  }
-
   modifyItem(item) {
     this.router.navigate(['form/work-detail/' + item.payload.doc.id]);
   }
 
-  view(item) {
-    this.router.navigate(['view-work/' + item.payload.doc.id]);
+  modifyImage(item) {
+    this.router.navigate(['form/update-image/' + item.payload.doc.id]);
   }
 
 }

@@ -1,0 +1,47 @@
+<div class="main-desktop">
+    <div class="filter">
+        <p class="filter-type">Filter by Type</p>
+        <div class="filter-menu">
+            <button class="item" mat-button (click)="getData()">All</button>
+            <button class="item" mat-button (click)="getDreidels()">Dreidels</button>
+            <button class="item" mat-button (click)="getPlates()">Plates</button>
+            <button class="item" mat-button (click)="getCandleSticks()">Candlesticks</button>
+            <button class="item" mat-button (click)="getVases()">Vases</button>
+            <button class="item" mat-button (click)="getMezuzahs()">Mezuzahs</button>
+            <button class="item" mat-button (click)="getMirrors()">Mirrors</button>
+        </div>
+        <p class="filter-price">Filter by Price</p>
+        <div class="filter-menu">
+            <button class="item" mat-button (click)="getData()">All</button>
+            <button class="item" mat-button (click)="getUnder100()">Under $100</button>
+            <button class="item" mat-button (click)="getUnder250()">$100 - $249</button>
+            <button class="item" mat-button (click)="getUnder500()">$250 - $500</button>
+            <button class="item" mat-button (click)="getOver500()">Over $500</button>
+        </div>
+    </div>
+    <app-list-edit [items]="items"></app-list-edit>
+</div>
+
+<div class="main-mobile">
+    <div class="filter">
+        <button mat-button class="filter-type" [matMenuTriggerFor]="type">Filter by Type</button>
+        <mat-menu #type="matMenu" class="filter-menu">
+            <button class="item" mat-menu-item (click)="getData()">All</button>
+            <button class="item" mat-menu-item (click)="getDreidels()">Dreidels</button>
+            <button class="item" mat-menu-item (click)="getPlates()">Plates</button>
+            <button class="item" mat-menu-item (click)="getCandleSticks()">Candlesticks</button>
+            <button class="item" mat-menu-item (click)="getVases()">Vases</button>
+            <button class="item" mat-menu-item (click)="getMezuzahs()">Mezuzahs</button>
+            <button class="item" mat-menu-item (click)="getMirrors()">Mirrors</button>
+        </mat-menu>
+        <button mat-button class="filter-price" [matMenuTriggerFor]="price">Filter by Price</button>
+        <mat-menu #price="matMenu" class="filter-menu">
+            <button class="item" mat-menu-item (click)="getData()">All</button>
+            <button class="item" mat-menu-item (click)="getUnder100()">Under $100</button>
+            <button class="item" mat-menu-item (click)="getUnder250()">$100 - $249</button>
+            <button class="item" mat-menu-item (click)="getUnder500()">$250 - $500</button>
+            <button class="item" mat-menu-item (click)="getOver500()">Over $500</button>
+        </mat-menu>
+    </div>
+    <app-list-edit class="items-list" [items]="items"></app-list-edit>
+</div>
