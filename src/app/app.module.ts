@@ -61,6 +61,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModifyListComponent } from './form/modify-list/modify-list.component';
 import { ListEditComponent } from './form/list-edit/list-edit.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { ListEditComponent } from './form/list-edit/list-edit.component';
     UserComponent,
     AboutComponent,
     ModifyListComponent,
-    ListEditComponent
+    ListEditComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

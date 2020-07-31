@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class SendMailServiceService {
+export class SendMailService {
 
   constructor(private http: HttpClient) { }
 
@@ -12,13 +12,15 @@ export class SendMailServiceService {
   //  return this.http.post<EmailForm>('http://localhost:3000/mail', obj);
   // }
 
-  sendEmail(subject, email, text) {
-    const uri = 'http://localhost:3000/mail';
-    const obj = {
-      subject,
-      email,
-      text
-    };
-    return this.http.post(uri, obj);
+  httpGet(url) {
+    return this.http.get(url);
+  }
+
+  httpPost(url, { }) {
+    return this.http.post(url, { name: 'Feliks' });
+  }
+
+  sendEmail(url, data) {
+    return this.http.post(url, data);
   }
 }

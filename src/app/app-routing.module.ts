@@ -13,6 +13,7 @@ import { AuthGuard } from './authentication/auth.guard';
 import { UserResolver } from './authentication/user.resolver';
 import { AboutComponent } from './about/about.component';
 import { ModifyListComponent } from './form/modify-list/modify-list.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
     path: 'user',
     component: UserComponent,
     resolve: { data: UserResolver }
+  },
+  {
+    path: 'contact',
+    component: ContactUsComponent
   }
 ];
 

@@ -1,0 +1,62 @@
+<h1>Fun Of Heuristic</h1>
+
+<form style="width: 50%; margin: auto">
+    <!-- <input id="name" name="name1" required minlength="4" [(ngModel)]="name1" #nameId="ngModel" placeholder="Name" style="width: 100%; height: 30px;font-size: 20px;">
+  <br>
+  <div *ngIf="nameId.invalid && (nameId.dirty || nameId.touched)">
+    <div *ngIf="nameId?.errors.required" style="color: red;font-size: 20px;">
+      Name is required.
+    </div>
+    <div *ngIf="nameId?.errors.minlength" style="color: red;font-size: 20px;">
+      Name must be at least 4 characters long.
+    </div>
+  </div>
+ <br><br> -->
+    <mat-card>
+        <h1>Material Form</h1>
+
+        <mat-form-field style="width: 100%">
+            <input matInput placeholder="Name" [formControl]="nameFormControl" />
+            <mat-error *ngIf="nameFormControl.hasError('minlength')">
+                Name must be at least 4 characters long.
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+                Name is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+            <input matInput placeholder="Email" [formControl]="emailFormControl" />
+            <mat-error *ngIf="emailFormControl.hasError('email')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+            <input matInput placeholder="Message" [formControl]="messageFormControl" />
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading" color="primary" (click)="register()">
+            {{buttionText}}
+        </button>
+    </mat-card>
+</form>
+<!-- <button [routerLink]="['/profile', 12367]">Go to Profile</button> -->
+<br />
+<div style="width: 50%; margin: auto">
+
+    <div>
+        <h1>
+            <ng-container *ngComponentOutlet="dummyComponent"></ng-container>
+        </h1>
+    </div>
+</div>
