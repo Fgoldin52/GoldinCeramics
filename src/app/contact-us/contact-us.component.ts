@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SendMailService } from './../send-mail-service.service';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,12 +10,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
 
-  image =
-    'https://images.freeimages.com/images/large-previews/7bc/bald-eagle-1-1400106.jpg';
-  name1;
-  age;
-  loading = false;
-  buttionText = 'Submit';
+  contactForm: FormGroup;
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -22,46 +18,61 @@ export class ContactUsComponent implements OnInit {
   ]);
 
   nameFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(4)
+    Validators.required
   ]);
 
   messageFormControl = new FormControl('', [
     Validators.required
   ]);
 
+  user = {
+    name: this.nameFormControl.value,
+    email: this.emailFormControl.value,
+    message: this.messageFormControl.value
+  };
+
   constructor(
-    public Email: SendMailService
+    public Email: SendMailService,
+    public formBuilder: FormBuilder,
+    private db: AngularFirestore
   ) { }
 
   ngOnInit() {
+    this.createForm();
   }
 
-  register() {
-    this.loading = true;
-    this.buttionText = 'Submitting...';
-    const user = {
-      name: this.nameFormControl.value,
-      email: this.emailFormControl.value,
-      message: this.messageFormControl.value
-    };
+  createForm() {
+    this.contactForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      message: ['', Validators.required],
+    });
+  }
 
-    this.Email.sendEmail('http://localhost:3000/sendmail', user).subscribe(
-      data => {
-        const res: any = data;
-        console.log(
-          `👏 > 👏 > 👏 > 👏 ${user.name} is successfully register and mail has been sent and the message id is ${res.messageId}`
-        );
-      },
-      err => {
-        console.log(err);
-        this.loading = false;
-        this.buttionText = 'Submit';
-      }, () => {
-        this.loading = false;
-        this.buttionText = 'Submit';
-      }
-    );
+  resetFields() {
+    this.contactForm = this.formBuilder.group({
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      message: new FormControl('', Validators.required),
+    });
+  }
+
+  onSubmit(value) {
+    this.createContact(value)
+      .then(
+        res => {
+          this.resetFields();
+          alert('The work has been successfully submitted');
+        }
+      );
+  }
+
+  createContact(value) {
+    return this.db.collection('email').add({
+      name: value.name,
+      email: value.email,
+      message: value.message
+    });
   }
 
 }
