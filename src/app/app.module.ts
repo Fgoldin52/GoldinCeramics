@@ -63,6 +63,9 @@ import { ModifyListComponent } from './form/modify-list/modify-list.component';
 import { ListEditComponent } from './form/list-edit/list-edit.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireFunctions } from '@angular/fire/functions';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -126,6 +129,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     AngularFirestoreModule,
     AngularFireModule,
     User,
+    AngularFireFunctionsModule,
+    AngularFireFunctions,
     { provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })

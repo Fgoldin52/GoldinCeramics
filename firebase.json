@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/goldin-ceramics",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

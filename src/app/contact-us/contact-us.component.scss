@@ -1,14 +1,52 @@
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 100px 0px 0px 50px;
+@media (min-width: 900px) {
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding-top: 150px;
+        width: 50%;
+        text-align: center;
+        margin-right: 25%;
+        margin-left: 25%;
+    }
+
+    mat-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    button {
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 50%;
+    }
+
 }
 
-input {
-    width: 100%;
-}
+@media only screen and (max-width: 899px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        padding-top: 150px;
+        width: 80%;
+        text-align: center;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
 
-button {
-    width: 50%;
-    margin-top: 30px;
+    mat-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+
+    button {
+        width: 50%;
+        margin-top: 20px;
+        margin-left: 50%;
+    }
 }
