@@ -87,7 +87,7 @@ import { AngularFireFunctions } from '@angular/fire/functions';
     ContactUsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     HttpClientModule,
     AppRoutingModule,

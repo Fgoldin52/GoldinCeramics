@@ -22,7 +22,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'purchase',
+    path: '',
     component: WorkListComponent
   },
   {

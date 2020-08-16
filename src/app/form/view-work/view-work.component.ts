@@ -30,6 +30,10 @@ export class ViewWorkComponent implements OnInit {
     });
   }
 
+  getShareURL() {
+    return 'https://www.fygpractice.com';
+  }
+
 
 
 
