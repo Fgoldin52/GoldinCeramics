@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { FirebaseService } from './../../firebase.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+
+import { SeoService } from './../../seo.service';
+import { CanonicalService } from '../../canonical.service';
 
 @Component({
   selector: 'app-work-list',
@@ -14,11 +18,23 @@ export class WorkListComponent implements OnInit {
   constructor(
     public firebaseService: FirebaseService,
     private db: AngularFirestore,
+    private seo: SeoService,
+    private titleService: Title,
+    private metaTagService: Meta,
+    private canonicalService: CanonicalService
   ) {
   }
 
   ngOnInit() {
     this.getData();
+    this.titleService.setTitle('Purchase high-quality unique, handmade ceramic art');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'The perfect gift for birthdays, holidays and other special occasions' }
+    );
+    this.metaTagService.addTags([
+      { name: 'keywords', content: 'Ceramic Art, Ceramics, Birthday gifts, Holiday gifts' }
+    ]);
+    this.canonicalService.setCanonicalURL();
   }
 
 

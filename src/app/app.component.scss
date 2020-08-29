@@ -5,8 +5,8 @@
     mat-toolbar {
         display: grid;
         grid-auto-flow: column;
-        color: black;
-        background-color:#F0F0F0;
+        color: gold;
+        background-color:black;
         width: 100%;
         align-items: center;
         position: fixed;
@@ -21,8 +21,8 @@
 
     hr {
         height:20px;
-        background-color: black;
-        color: black;
+        background-color: white;
+        color: white;
     }
 
     p:nth-child(2) {
@@ -44,6 +44,7 @@
     p {
         font-weight: normal;
         font-size: 16px;
+        color: gold;
     }
 
     html {
@@ -58,8 +59,8 @@
     mat-toolbar {
         display: grid;
         grid-auto-flow: column;
-        color: black;
-        background-color:#F0F0F0;
+        color: gold;
+        background-color:black;
         width: 100%;
         align-items: center;
         position: fixed;

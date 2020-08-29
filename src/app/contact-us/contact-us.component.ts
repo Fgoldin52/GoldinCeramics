@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { SendMailService } from './../send-mail-service.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+
+import { SeoService } from './../seo.service';
+import { CanonicalService } from '../canonical.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -34,11 +38,22 @@ export class ContactUsComponent implements OnInit {
   constructor(
     public Email: SendMailService,
     public formBuilder: FormBuilder,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private metaTagService: Meta,
+    private canonicalService: CanonicalService,
+    private titleService: Title,
   ) { }
 
   ngOnInit() {
     this.createForm();
+    this.titleService.setTitle('Contact Us');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'Contact us with any custom ceramic art orders, questions and more' }
+    );
+    this.metaTagService.addTags([
+      { name: 'keywords', content: 'Ceramic art, Custom orders, Questions' }
+    ]);
+    this.canonicalService.setCanonicalURL();
   }
 
   createForm() {

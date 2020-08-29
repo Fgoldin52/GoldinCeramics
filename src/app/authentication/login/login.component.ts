@@ -56,10 +56,10 @@ export class LoginComponent {
   }
 
   tryLogin(value) {
-    if (value.email === 'fgoldin52@gmail.com') {
+    if (value.email === 'olgagoldin@gmail.com') {
       this.authService.doLogin(value)
         .then(res => {
-          this.router.navigate(['purchase']);
+          this.router.navigate(['']);
         }, err => {
           console.log(err);
           this.errorMessage = err.message;

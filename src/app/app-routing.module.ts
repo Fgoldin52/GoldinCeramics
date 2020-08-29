@@ -22,7 +22,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: '',
+    path: 'purchase',
     component: WorkListComponent
   },
   {
@@ -40,7 +40,7 @@ const routes: Routes = [
     resolve: { data: EditUserResolver }
   },
   {
-    path: 'about',
+    path: '',
     component: AboutComponent
   },
   {

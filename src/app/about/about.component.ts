@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from './../seo.service';
+import { CanonicalService } from './../canonical.service';
 
 @Component({
   selector: 'app-about',
@@ -9,13 +11,22 @@ import { Meta, Title } from '@angular/platform-browser';
 export class AboutComponent implements OnInit {
 
   constructor(
-    private title: Title,
-    private meta: Meta
+    private seo: SeoService,
+    private titleService: Title,
+    private metaTagService: Meta,
+    private canonicalService: CanonicalService
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('About');
-    this.meta.addTag({ name: 'about', content: 'Goldin Ceramics' });
+    this.titleService.setTitle('Gold\'n Ceramics');
+    this.metaTagService.updateTag(
+      { name: 'description', content: 'How Olga Goldin creates unique, handmade ceramic art pieces for her customers nationwide' }
+    );
+    this.metaTagService.addTags([
+      { name: 'keywords', content: 'Ceramic art, Artist, Bisque firing, Glaze firing' }
+    ]);
+    this.canonicalService.setCanonicalURL();
   }
+
 
 }
