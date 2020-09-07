@@ -36,9 +36,9 @@
             <button class="item" mat-menu-item (click)="getVases()">Vases</button>
             <button class="item" mat-menu-item (click)="getMezuzahs()">Mezuzahs</button>
             <!-- <button class="item" mat-menu-item (click)="getMirrors()">Mirrors</button> -->
-            <button class="item" mat-button (click)="getMenorahs()">Menorahs</button>
-            <button class="item" mat-button (click)="getJewelry()">Jewelry</button>
-            <button class="item" mat-button (click)="getCups()">Cups</button>
+            <button class="item" mat-menu-item (click)="getMenorahs()">Menorahs</button>
+            <button class="item" mat-menu-item (click)="getJewelry()">Jewelry</button>
+            <button class="item" mat-menu-item (click)="getCups()">Cups</button>
         </mat-menu>
         <button mat-button class="filter-price" [matMenuTriggerFor]="price">Filter by Price</button>
         <mat-menu #price="matMenu" class="filter-menu">
