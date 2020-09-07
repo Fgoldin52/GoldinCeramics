@@ -54,7 +54,7 @@ export class ViewWorkComponent implements OnInit {
   }
 
   getShareURL() {
-    return `https://fygpractice.com/view-work/${this.item.id}`;
+    return `https://goldinceramics.com/view-work/${this.item.id}`;
   }
 
 

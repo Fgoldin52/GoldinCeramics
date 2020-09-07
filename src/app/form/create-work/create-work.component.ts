@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { FirebaseService } from '../../firebase.service';
 import { Observable } from 'rxjs';
-import { finalize, tap } from 'rxjs/operators';
+import { finalize } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -23,13 +23,14 @@ export class CreateWorkComponent implements OnInit {
   types: Type[] = [
     { value: 'Vase' },
     { value: 'Mirror' },
-    { value: 'Decorative Plate' },
+    { value: 'Dish' },
     { value: 'Candle Stick' },
     { value: 'Mezuzah' },
     { value: 'Dreidel' },
     { value: 'Menorah' },
-    { value: 'Jewelry Box' },
-    { value: 'Cup' }
+    { value: 'Jewelry' },
+    { value: 'Cup' },
+    { value: 'Other' }
   ];
 
   etsy: string;

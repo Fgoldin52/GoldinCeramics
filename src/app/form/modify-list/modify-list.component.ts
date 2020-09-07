@@ -36,8 +36,8 @@ export class ModifyListComponent implements OnInit {
     this.filterCandleSticks().subscribe(result => { this.items = result; });
   }
 
-  getPlates() {
-    this.filterPlates().subscribe(result => { this.items = result; });
+  getDishes() {
+    this.filterDishes().subscribe(result => { this.items = result; });
   }
 
   getVases() {
@@ -50,6 +50,18 @@ export class ModifyListComponent implements OnInit {
 
   getMirrors() {
     this.filterMirrors().subscribe(result => { this.items = result; });
+  }
+
+  getMenorahs() {
+    this.filterMenorahs().subscribe(result => { this.items = result; });
+  }
+
+  getJewelry() {
+    this.filterJewelry().subscribe(result => { this.items = result; });
+  }
+
+  getCups() {
+    this.filterCups().subscribe(result => { this.items = result; });
   }
 
   getUnder100() {
@@ -76,8 +88,8 @@ export class ModifyListComponent implements OnInit {
     return this.db.collection('works', ref => ref.where('type', '==', 'Candle Stick')).snapshotChanges();
   }
 
-  filterPlates() {
-    return this.db.collection('works', ref => ref.where('type', '==', 'Decorative Plate')).snapshotChanges();
+  filterDishes() {
+    return this.db.collection('works', ref => ref.where('type', '==', 'Dish')).snapshotChanges();
   }
 
   filterVases() {
@@ -90,6 +102,18 @@ export class ModifyListComponent implements OnInit {
 
   filterMirrors() {
     return this.db.collection('works', ref => ref.where('type', '==', 'Mirror')).snapshotChanges();
+  }
+
+  filterMenorahs() {
+    return this.db.collection('works', ref => ref.where('type', '==', 'Menorah')).snapshotChanges();
+  }
+
+  filterJewelry() {
+    return this.db.collection('works', ref => ref.where('type', '==', 'Jewelry')).snapshotChanges();
+  }
+
+  filterCups() {
+    return this.db.collection('works', ref => ref.where('type', '==', 'Cup')).snapshotChanges();
   }
 
   filterUnder100() {

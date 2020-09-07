@@ -27,10 +27,14 @@ export class WorkDetailComponent implements OnInit {
   types: Type[] = [
     { value: 'Vase' },
     { value: 'Mirror' },
-    { value: 'Decorative Plate' },
+    { value: 'Dish' },
     { value: 'Candle Stick' },
     { value: 'Mezuzah' },
     { value: 'Dreidel' },
+    { value: 'Menorah' },
+    { value: 'Jewelry' },
+    { value: 'Cup' },
+    { value: 'Other' }
   ];
 
   constructor(

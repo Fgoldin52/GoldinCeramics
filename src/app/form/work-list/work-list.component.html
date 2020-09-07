@@ -4,11 +4,14 @@
         <div class="filter-menu">
             <button class="item" mat-button (click)="getData()">All</button>
             <button class="item" mat-button (click)="getDreidels()">Dreidels</button>
-            <button class="item" mat-button (click)="getPlates()">Plates</button>
-            <button class="item" mat-button (click)="getCandleSticks()">Candlesticks</button>
+            <button class="item" mat-button (click)="getDishes()">Dishes</button>
+            <!-- <button class="item" mat-button (click)="getCandleSticks()">Candlesticks</button> -->
             <button class="item" mat-button (click)="getVases()">Vases</button>
             <button class="item" mat-button (click)="getMezuzahs()">Mezuzahs</button>
-            <button class="item" mat-button (click)="getMirrors()">Mirrors</button>
+            <!-- <button class="item" mat-button (click)="getMirrors()">Mirrors</button> -->
+            <button class="item" mat-button (click)="getMenorahs()">Menorahs</button>
+            <button class="item" mat-button (click)="getJewelry()">Jewelry</button>
+            <button class="item" mat-button (click)="getCups()">Cups</button>
         </div>
         <p class="filter-price">Filter by Price</p>
         <div class="filter-menu">
@@ -28,11 +31,14 @@
         <mat-menu #type="matMenu" class="filter-menu">
             <button class="item" mat-menu-item (click)="getData()">All</button>
             <button class="item" mat-menu-item (click)="getDreidels()">Dreidels</button>
-            <button class="item" mat-menu-item (click)="getPlates()">Plates</button>
-            <button class="item" mat-menu-item (click)="getCandleSticks()">Candlesticks</button>
+            <button class="item" mat-menu-item (click)="getDishes()">Dishes</button>
+            <!-- <button class="item" mat-menu-item (click)="getCandleSticks()">Candlesticks</button> -->
             <button class="item" mat-menu-item (click)="getVases()">Vases</button>
             <button class="item" mat-menu-item (click)="getMezuzahs()">Mezuzahs</button>
-            <button class="item" mat-menu-item (click)="getMirrors()">Mirrors</button>
+            <!-- <button class="item" mat-menu-item (click)="getMirrors()">Mirrors</button> -->
+            <button class="item" mat-button (click)="getMenorahs()">Menorahs</button>
+            <button class="item" mat-button (click)="getJewelry()">Jewelry</button>
+            <button class="item" mat-button (click)="getCups()">Cups</button>
         </mat-menu>
         <button mat-button class="filter-price" [matMenuTriggerFor]="price">Filter by Price</button>
         <mat-menu #price="matMenu" class="filter-menu">
