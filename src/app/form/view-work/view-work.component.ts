@@ -57,5 +57,9 @@ export class ViewWorkComponent implements OnInit {
     return `https://goldinceramics.com/view-work/${this.item.id}`;
   }
 
+  openEtsy() {
+    window.open(this.item.etsy);
+  }
+
 
 }
