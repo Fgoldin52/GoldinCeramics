@@ -22,7 +22,7 @@ export class ModifyListComponent implements OnInit {
   }
 
   getData() {
-    this.firebaseService.getUsers()
+    this.firebaseService.getPurchaseWorks()
       .subscribe(result => {
         this.items = result;
       });
