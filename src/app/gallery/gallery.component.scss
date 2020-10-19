@@ -81,6 +81,7 @@
         margin-top: -15px;
         position: fixed;
         background-color: white;
+        justify-content: center;
     }
 
     button {
@@ -94,11 +95,4 @@
         padding-top: 270px;
 
     }
-
-    .image {
-        height: 400px;
-        width: 300px;
-        object-fit: cover;
-    }
-
 }
