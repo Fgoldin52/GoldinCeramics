@@ -1,0 +1,111 @@
+@media (min-width: 900px) {
+    .desktop-main {
+        display: flex;
+        flex-direction: row;
+        padding: 60px 0px 70px 50px;
+    }
+
+    .mobile-main {
+        display: none;
+    }
+
+    .filter-header {
+        margin-top: 50px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 25%;
+        padding-top: 30px;
+    }
+
+    button {
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    mat-form-field {
+        width: 80%;
+    }
+
+    .image-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 75%;
+        margin-left: 25%;
+
+    }
+
+    .image {
+        height: 400px;
+        width: 300px;
+        padding: 30px;
+        object-fit: cover;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .filter-button {
+        margin: 5px;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    .mobile-main {
+        display: flex;
+        flex-direction: row;
+        padding: 70px 0px 70px 0px;
+    }
+
+    .gallery-list {
+        padding-left: 25%;
+    }
+
+    .desktop-main {
+        display: none;
+    }
+    .filter-buttons {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 0px 0px 50px;
+        position: fixed;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .image-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 75%;
+        margin-left: 15%;
+        padding-top: 270px;
+
+    }
+
+    .image {
+        height: 400px;
+        width: 300px;
+        padding: 30px;
+        object-fit: cover;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}

@@ -14,6 +14,7 @@ import { UserResolver } from './authentication/user.resolver';
 import { AboutComponent } from './about/about.component';
 import { ModifyListComponent } from './form/modify-list/modify-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactUsComponent
+  },
+  {
+    path: 'gallery',
+    component: GalleryComponent
   }
 ];
 

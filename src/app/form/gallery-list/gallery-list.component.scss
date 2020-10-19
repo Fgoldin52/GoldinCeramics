@@ -1,0 +1,44 @@
+@media (min-width: 900px) {
+    img {
+        height: 400px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 400px;
+    }
+
+    .container {
+        width: 400px;
+        flex-wrap: wrap;
+        text-align: left;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    .list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        padding-top: 50px;
+    }
+
+    .container {
+        padding: 20px;
+        margin-right: 20%;
+        margin-left: 20%;
+    }
+
+    img {
+        height: 400px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+}

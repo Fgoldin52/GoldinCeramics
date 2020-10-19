@@ -18,7 +18,8 @@ interface Type {
 
 export class CreateWorkComponent implements OnInit {
 
-  exampleForm: FormGroup;
+  purchaseForm: FormGroup;
+  galleryForm: FormGroup;
 
   types: Type[] = [
     { value: 'Vase' },
@@ -39,18 +40,19 @@ export class CreateWorkComponent implements OnInit {
   price: number;
 
   constructor(
-    private test: FormBuilder,
+    private form: FormBuilder,
     public firebaseService: FirebaseService,
     private storage: AngularFireStorage,
     private db: AngularFirestore
   ) { }
 
   ngOnInit() {
-    this.createForm();
+    this.createPurchaseForm();
+    this.createGalleryForm();
   }
 
-  createForm() {
-    this.exampleForm = this.test.group({
+  createPurchaseForm() {
+    this.purchaseForm = this.form.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
       height: ['', Validators.required],
@@ -64,8 +66,16 @@ export class CreateWorkComponent implements OnInit {
     });
   }
 
+  createGalleryForm() {
+    this.galleryForm = this.form.group({
+      titleGallery: ['', Validators.required],
+      typeGallery: ['', Validators.required],
+      url: ['']
+    });
+  }
+
   resetFields() {
-    this.exampleForm = this.test.group({
+    this.purchaseForm = this.form.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       height: new FormControl('', Validators.required),
@@ -79,7 +89,17 @@ export class CreateWorkComponent implements OnInit {
   }
 
   onSubmit(value) {
-    this.createWork(value)
+    this.createPurchaseWork(value)
+      .then(
+        res => {
+          this.resetFields();
+          alert('The work has been successfully submitted');
+        }
+      );
+  }
+
+  submitGalleryWork(value) {
+    this.createGalleryWork(value)
       .then(
         res => {
           this.resetFields();
@@ -109,7 +129,7 @@ export class CreateWorkComponent implements OnInit {
       });
   }
 
-  createWork(value) {
+  createPurchaseWork(value) {
     return this.db.collection('works').add({
       title: value.title,
       description: value.description,
@@ -120,6 +140,15 @@ export class CreateWorkComponent implements OnInit {
       price: +value.price,
       etsy: value.etsy,
       type: value.type,
+      downloadURL: this.downloadURL
+    });
+  }
+
+  // tslint:disable-next-line:adjacent-overload-signatures
+  createGalleryWork(value) {
+    return this.db.collection('gallery').add({
+      title: value.titleGallery,
+      type: value.typeGallery,
       downloadURL: this.downloadURL
     });
   }

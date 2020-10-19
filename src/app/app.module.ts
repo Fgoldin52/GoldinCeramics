@@ -65,6 +65,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireFunctions } from '@angular/fire/functions';
+import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryListComponent } from './form/gallery-list/gallery-list.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,9 @@ import { AngularFireFunctions } from '@angular/fire/functions';
     AboutComponent,
     ModifyListComponent,
     ListEditComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    GalleryComponent,
+    GalleryListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

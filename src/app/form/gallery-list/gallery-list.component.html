@@ -1,0 +1,6 @@
+<div class="list">
+    <div *ngFor="let item of items" class="container">
+        <h4 class="item">{{item.payload.doc.data().title}}</h4>
+        <img mat-card-image src={{item.payload.doc.data().downloadURL}}>
+    </div>
+</div>

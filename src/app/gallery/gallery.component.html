@@ -1,0 +1,52 @@
+<div class="desktop-main">
+    <form class="form" [formGroup]="galleryForm" (ngSubmit)="onSubmit(galleryForm.value)">
+        <h4 class="form-title">Custom Order Request Form</h4>
+        <div class="mobile-form">
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+        </div>
+        <div class="mobile-form">
+            <mat-form-field>
+                <input matInput placeholder="Phone Number" formControlName="phone">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Art Piece Name" formControlName="artPieceName">
+            </mat-form-field>
+        </div>
+        <mat-form-field>
+            <textarea matInput placeholder="Message" formControlName="message"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="warn" type="submit">Submit</button>
+        <h4 class="filter-header">Filter</h4>
+        <div>
+            <button class="filter-button" mat-raised-button (click)="getData()">All</button>
+            <button class="filter-button" mat-raised-button (click)="getCups()">Cups</button>
+            <button class="filter-button" mat-raised-button (click)="getDreidels()">Dreidels</button>
+            <button class="filter-button" mat-raised-button (click)="getDishes()">Dishes</button>
+            <button class="filter-button" mat-raised-button (click)="getJewelry()">Jewelry</button>
+            <button class="filter-button" mat-raised-button (click)="getMenorahs()">Menorahs</button>
+            <button class="filter-button" mat-raised-button (click)="getMezuzahs()">Mezuzahs</button>
+            <button class="filter-button" mat-raised-button (click)="getVases()">Vases</button>
+        </div>
+    </form>
+    <app-gallery-list [items]="items"></app-gallery-list>
+</div>
+
+<div class="mobile-main">
+    <div class="filter-buttons">
+        <h4 class="filter-header">Filter</h4>
+        <button class="filter-button" mat-raised-button (click)="getData()">All</button>
+        <button class="filter-button" mat-raised-button (click)="getCups()">Cups</button>
+        <button class="filter-button" mat-raised-button (click)="getDreidels()">Dreidels</button>
+        <button class="filter-button" mat-raised-button (click)="getDishes()">Dishes</button>
+        <button class="filter-button" mat-raised-button (click)="getJewelry()">Jewelry</button>
+        <button class="filter-button" mat-raised-button (click)="getMenorahs()">Menorahs</button>
+        <button class="filter-button" mat-raised-button (click)="getMezuzahs()">Mezuzahs</button>
+        <button class="filter-button" mat-raised-button (click)="getVases()">Vases</button>
+    </div>
+    <app-gallery-list class="gallery-list" [items]="items"></app-gallery-list>
+</div>

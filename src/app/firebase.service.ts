@@ -61,8 +61,12 @@ export class FirebaseService {
     return this.db.collection('works').doc(userKey).delete();
   }
 
-  getUsers() {
+  getPurchaseWorks() {
     return this.db.collection('works').snapshotChanges();
+  }
+
+  getGalleryWorks() {
+    return this.db.collection('gallery').snapshotChanges();
   }
 
   createUser(value) {
