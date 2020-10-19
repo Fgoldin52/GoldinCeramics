@@ -61,28 +61,31 @@
 @media only screen and (max-width: 899px) {
     .mobile-main {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         padding: 70px 0px 70px 0px;
     }
 
     .gallery-list {
-        padding-left: 25%;
+        padding-top: 70px;
     }
 
     .desktop-main {
         display: none;
     }
+
     .filter-buttons {
         display: flex;
-        flex-direction: column;
-        padding: 70px 0px 0px 50px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0px 0px 0px 50px;
+        margin-top: -10px;
         position: fixed;
+        background-color: white;
     }
 
     button {
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        width: 15%;
+        margin: 20px;
     }
     
     .image-list {
