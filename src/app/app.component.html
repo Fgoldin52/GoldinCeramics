@@ -1,6 +1,6 @@
 <mat-toolbar class="desktop">
     <h3 routerLink="" routerLinkActive="active-link">Gold'n Ceramics</h3>
-    <p mat-menu-item routerLink="" routerLinkActive="active-link">
+    <p mat-menu-item routerLink="/about" routerLinkActive="active-link">
         <span>About</span>
     </p>
     <p mat-menu-item routerLink="/gallery" routerLinkActive="active-link">
@@ -15,7 +15,7 @@
     <p mat-menu-item routerLink="/modify" routerLinkActive="active-link" *ngIf="isAdmin">
         <span>Modify</span>
     </p>
-    <p mat-menu-item routerLink="/purchase" routerLinkActive="active-link">
+    <p mat-menu-item routerLink="" routerLinkActive="active-link">
         <span>Purchase</span>
     </p>
     <p mat-menu-item routerLink="/contact" routerLinkActive="active-link">
@@ -28,7 +28,7 @@
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #main="matMenu">
-        <p mat-menu-item routerLink="" routerLinkActive="active-link">
+        <p mat-menu-item routerLink="/about" routerLinkActive="active-link">
             <span>About</span>
         </p>
         <p mat-menu-item routerLink="/gallery" routerLinkActive="active-link">
@@ -43,7 +43,7 @@
         <p mat-menu-item routerLink="/modify" routerLinkActive="active-link" *ngIf="isAdmin">
             <span>Modify</span>
         </p>
-        <p mat-menu-item routerLink="/purchase" routerLinkActive="active-link">
+        <p mat-menu-item routerLink="" routerLinkActive="active-link">
             <span>Purchase</span>
         </p>
         <p mat-menu-item routerLink="/contact" routerLinkActive="active-link">
