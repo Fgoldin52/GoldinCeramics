@@ -2,6 +2,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-functions.js"></script>
 
 <form align="center" [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+    <!-- 
     <mat-card>
         <h4>Contact Us</h4>
 
@@ -35,5 +36,28 @@
         <button mat-raised-button color="warn">
             Submit
         </button>
+    </mat-card>
+-->
+    <mat-card class="contact-card">
+        <h4>Contact Information</h4>
+        <section>
+            <p>
+                <b>Email:</b> olgagoldin@msn.com
+            </p>
+            <p>
+                <b>Phone Number:</b> 410-526-7031</p>
+            <p>
+                <b>Facebook:</b>
+                <a href="https://www.facebook.com/GoldinCeramics/" target="_blank">&nbsp;https://www.facebook.com/GoldinCeramics/</a>
+            </p>
+            <p>
+                <b>Instagram: </b>
+                <a href="https://instagram.com/goldinceramics" target="_blank">&nbsp;https://instagram.com/goldinceramics</a>
+            </p>
+            <p>
+                <b>Etsy: </b>
+                <a href="http://www.etsy.com/people/olgagoldin" target="_blank">&nbsp;http://www.etsy.com/people/olgagoldin</a>
+            </p>
+        </section>
     </mat-card>
 </form>

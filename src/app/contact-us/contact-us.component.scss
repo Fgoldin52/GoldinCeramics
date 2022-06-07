@@ -14,7 +14,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        
     }
 
     button {
@@ -22,6 +21,19 @@
         margin-top: 20px;
         margin-left: 50%;
     }
+
+    .contact-card {
+        margin-top: 80px;
+    }
+
+    section {
+        text-align: left;
+    }
+
+    h4 {
+        padding: 20px;
+    }
+
 
 }
 
@@ -49,4 +61,17 @@
         margin-top: 20px;
         margin-left: 50%;
     }
+
+    .contact-card {
+        margin-top: 80px;
+    }
+
+    section {
+        text-align: left;
+    }
+
+    h4 {
+        padding: 20px;
+    }
+
 }
